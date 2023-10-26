@@ -1,0 +1,245 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/*****************************************************************************/
+/* Encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+/*****************************************************************************/
+/* Estilos para el video y el contenedor */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-height: 100vh; /* Ajusta la altura máxima*/
+}
+.titulo {
+    line-height: 200px;
+    font-size: 10000px;
+    color: #ffffff;
+  }
+video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*****************************************************************************/
+/* Estilos para el contenido del héroe */
+.hero {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #fff; /* Cambia el color del texto*/
+    padding: 100px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+/*****************************************************************************/
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+/*****************************************************************************/
+/* Fondo */
+main {
+    background-image: url(../img/fondo\ main.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
+/*****************************************************************************/
+/* Secciones */
+section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section h2 {
+    color: #ffffff;
+    text-align: center;
+    line-height: 100px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+/*****************************************************************************/
+/* Estilos para la sección de servicios */
+#servicios {
+
+    padding: 40px 0;
+    text-align: center;
+}
+
+#servicios h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor de productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para cada producto */
+.producto {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 5px;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.producto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    font-size: 1rem;
+}
+/*****************************************************************************/
+/* Estilos para el botón "Leer Más" */
+.read-more-button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.read-more-button:hover {
+    background-color: #0056b3; /* Cambiar el color de fondo al pasar el ratón */
+}
+/*****************************************************************************/
+/* Estilos para la sección de contacto */
+#contáctanos {
+
+    padding: 40px 0;
+    text-align: center;
+}
+
+#contáctanos h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el formulario de contacto */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label {
+    color: #ffffff;/* Cambia el color del texto*/
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 150px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/*****************************************************************************/
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Estilos de la sección de contacto o formulario */
+/* .contact-section { ... } */
+
+/* Estilos de la sección de servicios */
+/* .services-section { ... } */
+
+/* Estilos de la sección del equipo */
+/* .team-section { ... } */
