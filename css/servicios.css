@@ -1,0 +1,137 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    background-image: url(../img/fonde\ de\ servicos1.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Estilos de la sección de inicio */
+#inicio {
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 1.0);
+}
+
+/* Estilos de la sección de servicios */
+#servicios {
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1.0);
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.producto {
+    color: #fff;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1.0);
+    width: calc(33.33% - 20px);
+    text-align: center;
+}
+
+/* Tamaño fijo para las imágenes */
+.producto img {
+    width: 300px; /* Esto ajusta el ancho de todas las imágenes al 100% del contenedor */
+    height: 400px;
+}
+/* Estilos de la sección de contacto */
+#contacto {
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 1.0);
+}
+
+#contacto form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#contacto label,
+#contacto input,
+#contacto textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contacto button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contacto button:hover {
+    background-color: #555;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Cambiar estilos de enlace en el pie de página */
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
