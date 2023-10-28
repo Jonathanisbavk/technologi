@@ -16,7 +16,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  background-image: url(./im3.jpg);
+  background-image: url(/technologi/img/im3.jpg);
 }
 
 body::after {
