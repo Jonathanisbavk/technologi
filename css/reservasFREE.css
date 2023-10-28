@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner{
+    padding: 40px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h2{
+    font-size: 46px;
+    padding-bottom: 30px;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: 420px 420px;
+    border: 1px solid #b3e2d0;    /*general*/
+}
+
+.img1{
+    background: url("../img/ciberseguridad.jpg") center/cover no-repeat; /*UTIL*/
+}
+.img2{
+    background: url("../img/Desarrollo_web.jpg") center/cover no-repeat; /*UTIL*/
+}
+.img3{
+    background: url("../img/ci") center/cover no-repeat; /*UTIL*/
+}
+
+.card-content{
+    background: #ffffff;
+    height: 330px;
+}
+
+.card-content h3{
+    text-align: center;
+    padding: 22px 0 15px 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.form-row{
+    display: flex;  /*Row=Fila*/
+    flex-direction: column;
+    text-align: left;
+    width: 85%;
+    margin: 0 auto; /*auto, (para comodar center) sino no se separa p*/
+}
+
+label{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+input{
+    padding: 10px 0px;
+    border: none;   
+    outline: none;  /*No the line of border*/
+    border-bottom: 1px solid #bdeedb;
+    margin-bottom: 12px;
+}
+
+input::placeholder{
+    color: #bab7b7cf;
+}
+
+.button{
+    font-size: 14px;
+    width: 35%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    margin-top: 4px;
+    cursor: pointer; /*la manita*/
+    background-color: #2e5547;
+    color: #ffffff;
+}
+
+
