@@ -1,6 +1,7 @@
 //Lamada a los paquetes
 const express = require("express")
 const mongoose = require("mongoose")
+const empleados = require("./routes/empleados")
 const pagos = require("./routes/pagos-facturas")
 const usuarios = require("./routes/usuarios")
 const consulta = require ("./routes/informacion-consultoria")
@@ -21,7 +22,7 @@ aplicacion.get (
     "/", (req, res) => {res.send ("Pagina de Raiz")}
 )
 aplicacion.use(
-    "/api", pagos, usuarios, consulta
+    "/api", pagos, usuarios, consulta, empleados
 );
 
 //Ejecucion  llamado a llamar del .env
