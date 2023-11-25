@@ -19,14 +19,13 @@ const usuariosModel = new mongoose.Schema({
     },
     Sexo: {
       type: String,
-      required: true,
-      enum: ["Masculino", "Femenino", "Otro"], 
+      required: true, 
     },
     correo: {
-        type: String,
-        required: true,
-        unique: true,
-      },
+      type: String,
+      required: true,
+      unique: true,
+    },
 });
 
 

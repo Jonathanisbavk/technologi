@@ -1,27 +1,27 @@
 const express = require("express")
 const router = express.Router();
-const pagosModel = require("../models/usuarios")
+const usuariosModel = require("../models/usuarios")
 
 //getF
 router.get("/usuarios", (req, res) => {
-    pagosModel.find ()
+    usuariosModel.find ()
     .then((data) => res.json(data))
     .catch((error) => res.json({mensaje: error}))
-});  //recibe dos parametros la ruta (consulta) y la funcion a ejecutar
+});
 
 
 //get con id
 router.get("/usuarios/:id", (req, res) => {
     const {id} =req.params;
-    pagosModel.findById (id)
+    usuariosModel.findById (id)
     .then((data) => res.json(data))
     .catch((error) => res.json({mensaje: error}))
 })
 
 // POST
 router.post("/usuarios", (req, res) => {
-    const facturas = new pagosModel(req.body);
-    facturas.save()
+    const newuser = new usuariosModel(req.body);
+    newuser.save()
     .then((data) => res.json({mensaje: "Guardado correctamente"}))
     .catch((error) => res.json({mensaje: error}))
 });
@@ -31,7 +31,7 @@ router.post("/usuarios", (req, res) => {
 router.put("/usuarios/:id", (req, res) => {
     const { id } = req.params;
     const { dni, edad, nombre, apellido, sexo, correo } = req.body;
-    pagosModel.updateOne({_id: id}, {$set:{dni, edad, nombre, apellido, sexo, correo}})
+    usuariosModel.updateOne({_id: id}, {$set:{dni, edad, nombre, apellido, sexo, correo}})
     .then((data) => res.json({mensaje: "Actualizado correctamente"}))
     .catch((error) => res.json({mensaje: error}))
 });
@@ -41,7 +41,7 @@ router.put("/usuarios/:id", (req, res) => {
 
 router.delete("/usuarios/:id", (req, res) => {
     const {id} =req.params;
-    pagosModel.deleteOne ({_id:id})
+    usuariosModel.deleteOne ({_id:id})
     .then((data) => res.json({mensaje: "Objeto eliminado"}))
     .catch((error) => res.json({mensaje: error}))
 })
