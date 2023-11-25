@@ -2,6 +2,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const pagos = require("./routes/pagos-facturas")
+const usuarios = require("./routes/usuarios")
 require("dotenv").config()
 
 //Configuraciones
@@ -19,10 +20,10 @@ aplicacion.get (
     "/", (req, res) => {res.send ("Pagina de Raiz")}
 )
 aplicacion.use(
-    "/api", pagos
+    "/api", pagos, usuarios
 );
 
-//Ejecucion
+//Ejecucion  llamado a llamar del .env
 mongoose.connect(process.env.mongodb_conexion)
     .then(() => {console.log("Conexion realizada")})
     .catch((error) => {console.log(error)})
