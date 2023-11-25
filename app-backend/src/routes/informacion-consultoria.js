@@ -4,10 +4,10 @@ const infoModel = require("../models/informacion-consultoria")
 
 // GET
 router.get("/informacion-consultoria", (req, res) => {
-    pagosModel.find ()
+    infoModel.find ()
     .then((data) => res.json(data))
     .catch((error) => res.json({mensaje: error}))
-});  
+}); 
 
 
 // GET con ID
