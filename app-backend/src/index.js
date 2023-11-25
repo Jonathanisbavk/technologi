@@ -3,6 +3,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const pagos = require("./routes/pagos-facturas")
 const usuarios = require("./routes/usuarios")
+const consulta = require ("./routes/informacion-consultoria")
 require("dotenv").config()
 
 //Configuraciones
@@ -20,7 +21,7 @@ aplicacion.get (
     "/", (req, res) => {res.send ("Pagina de Raiz")}
 )
 aplicacion.use(
-    "/api", pagos, usuarios
+    "/api", pagos, usuarios, consulta
 );
 
 //Ejecucion  llamado a llamar del .env
