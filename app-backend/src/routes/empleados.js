@@ -44,7 +44,7 @@ router.delete("/empleados/:id", (req, res) => {
     .catch((error) => res.json({mensaje: error}))
 })
 
-
+// seleccionar los metodos adecuados y agregar mas info para las busquedas
 module.exports = router
 
 

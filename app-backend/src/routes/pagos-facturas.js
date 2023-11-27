@@ -17,6 +17,7 @@ router.get("/pagos-facturas/:id", (req, res) => {
     .then((data) => res.json(data))
     .catch((error) => res.json({mensaje: error}))
 })
+//busquedas con utilizar metodo find y la agregar funcion
 
 // POST
 router.post("/pagos-facturas", (req, res) => {
