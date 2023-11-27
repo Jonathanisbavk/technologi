@@ -7,7 +7,7 @@ router.get("/pagos-facturas", (req, res) => {
     pagosModel.find ()
     .then((data) => res.json(data))
     .catch((error) => res.json({mensaje: error}))
-});  //recibe dos parametros la ruta (consulta) y la funcion a ejecutar
+});
 
 
 //get con id
