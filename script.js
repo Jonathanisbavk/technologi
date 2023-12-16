@@ -1,5 +1,6 @@
 const url_api = "http://localhost:3000/api/pagos-facturas/";
 const api_empleados = "http://localhost:3000/api/empleados/";
+const api_informacion_consultoria = "http://localhost:3000/api/informacion_consultoria/"
 
 function listar() {
     //limpiar contenido actual de la tabla
@@ -178,3 +179,93 @@ function realizarBusqueda(empleados_busqueda) {
 
 
 
+function listarInfoConsultoria() {
+    //limpiar contenido actual de la tabla
+    document.getElementById("tbody").innerHTML = "";
+
+    axios.get(api_informacion_consultoria)
+        .then(function (response) {
+            for (var index = 0; index < response.data.length; index++) {
+                var fila = "<tr>" + //new fila
+                    "<td>" + response.data[index].cliente + "</td>" +
+                    "<td>" + response.data[index].tipo_servicio + "</td>" +
+                    "<td>" + response.data[index].fecha + "</td>" +
+                    "<td>" + response.data[index].pregunta_frecuente + "</td>" +
+                    "<td>" + response.data[index].estado + "</td>" +
+                    "</tr>"; //final fila
+                //insercion al codigo html
+                document.getElementById("tbody").insertRow(-1).innerHTML = fila;
+            }
+        })
+        .catch(function (error) {
+            console.log("Error al realizar la petición");
+        });
+}
+
+function guardarInfoConsultoria() {
+    const nuevaInfo = JSON.stringify({
+        cliente: cliente.value,
+        tipo_servicio: tipo_servicio.value,
+        fecha: fecha.value,
+        pregunta_frecuente: pregunta_frecuente.value,
+        estado: estado.value
+    })
+    //petición HTTP para guardar los datos
+    axios.post(api_informacion_consultoria, nuevaInfo, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (response) {
+            alert(response.data);
+            listarInfoConsultoria();
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+}
+
+function buscarClienteInfo() {
+    const cliente = document.getElementById("cliente_buscar").value;
+    const info_busqueda = `${api_informacion_consultoria}filtrar?cliente=${cliente}`;
+    realizarBusquedaInfo(info_busqueda);
+}
+
+function buscarFechaInfo() {
+    const fecha = document.getElementById("fecha_buscar").value;
+    const info_busqueda = `${api_informacion_consultoria}filtrar?fecha=${fecha}`;
+    realizarBusquedaInfo(info_busqueda);
+}
+
+function buscarPreguntaFrecuenteInfo() {
+    const prefrecuente = document.getElementById("prefrecuente_buscar").value;
+    const info_busqueda = `${api_informacion_consultoria}filtrar?prefrecuente=${prefrecuente}`;
+    realizarBusquedaInfo(info_busqueda);
+}
+
+function buscarEstadoInfo() {
+    const estado = document.getElementById("estado_buscar").value;
+    const info_busqueda = `${api_informacion_consultoria}filtrar?estado=${estado}`;
+    realizarBusquedaInfo(info_busqueda);
+}
+
+function realizarBusquedaInfo(info_busqueda) {
+    //limpiado de contenido
+    document.getElementById("tbody_busqueda").innerHTML = "";
+
+    axios.get(info_busqueda)
+        .then(function (response) {
+            for (var index = 0; index < response.data.length; index++) {
+                var fila = "<tr>" +
+                    "<td>" + response.data[index].cliente + "</td>" +
+                    "<td>" + response.data[index].tipo_servicio + "</td>" +
+                    "<td>" + response.data[index].fecha + "</td>" +
+                    "<td>" + response.data[index].pregunta_frecuente + "</td>" +
+                    "<td>" + response.data[index].estado + "</td>" +
+                    "</tr>";
+                //insercion al html
+                document.getElementById("tbody_busqueda").insertRow(-1).innerHTML = fila;
+            }
+        })
+        .catch(function (error) {
+            console.log(`Error al realizar la búsqueda`);
+        });
+}

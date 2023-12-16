@@ -77,7 +77,7 @@
             <label for="cliente_buscar" class="form-label">Ingrese el nombre del cliente:</label>
             <input type="text" id="cliente_buscar" class="form-control">
             <br>
-            <button onclick="buscarCliente()" class="btn btn-primary">Buscar por Cliente</button>
+            <button onclick="buscarClienteInfo()" class="btn btn-primary">Buscar por Cliente</button>
         </div>
 
         <!-- buscar por fecha -->
@@ -85,15 +85,15 @@
             <label for="fecha_buscar" class="form-label">Ingrese la fecha:</label>
             <input type="date" id="fecha_buscar" class="form-control">
             <br>
-            <button onclick="buscarFecha()" class="btn btn-primary">Buscar por Fecha</button>
+            <button onclick="buscarFechaInfo()" class="btn btn-primary">Buscar por Fecha</button>
         </div>
 
         <!-- buscar por pregunta frecuente -->
         <div class="mb-3">
-            <label for="monto_buscar" class="form-label">Ingrese la pregunta frecuente:</label>
-            <input type="number" id="monto_buscar" class="form-control">
+            <label for="prefrecuente_buscar" class="form-label">Ingrese la pregunta frecuente:</label>
+            <input type="text" id="prefrecuente_buscar" class="form-control">
             <br>
-            <button onclick="buscarPreguntaFrecuente()" class="btn btn-primary">Buscar por Pregunta Frecuente</button>
+            <button onclick="buscarPreguntaFrecuenteInfo()" class="btn btn-primary">Buscar por Pregunta Frecuente</button>
         </div>
 
         <!-- buscar por estado -->
@@ -105,7 +105,7 @@
                 <option value="No pago">No pago</option>
             </select>
             <br>
-            <button onclick="buscarEstado()" class="btn btn-primary">Buscar por Estado</button>
+            <button onclick="buscarEstadoInfo()" class="btn btn-primary">Buscar por Estado</button>
         </div>
 
         <table id="tabla_busqueda" class="table table-bordered mt-3">
