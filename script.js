@@ -138,23 +138,23 @@ function guardarEmpleados() {
 function buscarEmpleado() {
     const nombre = document.getElementById("nombre_buscar").value;
     const empleados_busqueda = `${api_empleados}filtrar?nombre=${nombre}`;
-    realizarBusqueda(empleados_busqueda);
+    realizarBusquedaEmpleados(empleados_busqueda);
 }
 
 function buscarCorreoEmpleado() {
     const correo = document.getElementById("correo_buscar").value;
     const empleados_busqueda = `${api_empleados}filtrar?correo=${correo}`;
-    realizarBusqueda(empleados_busqueda);
+    realizarBusquedaEmpleados(empleados_busqueda);
 }
 
 function buscarCargoEmpleado() {
     const cargo = document.getElementById("cargo_buscar").value;
     const empleados_busqueda = `${api_empleados}filtrar?cargo=${cargo}`;
-    realizarBusqueda(empleados_busqueda);
+    realizarBusquedaEmpleados(empleados_busqueda);
 }
 
 
-function realizarBusqueda(empleados_busqueda) {
+function realizarBusquedaEmpleados(empleados_busqueda) {
     //limpiado de contenido
     document.getElementById("tbody_busqueda").innerHTML = "";
 
