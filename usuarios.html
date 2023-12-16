@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/users.css">
+    <title>Registro de los usuarios</title>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h1 class="display-4">Registro de los usuarios</h1>
+        <br>
+        <form action="" method="post">
+            <div class="mb-3">
+                <label for="dni" class="form-label">DNI:</label>
+                <input type="number" class="form-control" id="dni" name="dni">
+            </div>
+
+            <div class="mb-3">
+                <label for="tipo_servicio" class="form-label">Edad:</label>
+                <input type="number" class="form-control" id="edad" name="edad">
+            </div>
+
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido:</label>
+                <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+
+            <div class="mb-3">
+                <label for="sexo" class="form-label">Sexo:</label>
+                <select class="form-select" id="sexo" name="sexo">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Prefiero-No-Decirlo">Prefiero no decirlo</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo:</label>
+                <input type="text" class="form-control" id="correo" name="correo">
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="guardarUsers()">Guardar</button>
+        </form>
+
+        <br><br>
+
+        <h1 class="display-4">Listado de usuarios emitidas</h1>
+        <button type="button" class="btn btn-secondary" onclick="listarUsers()">Listar de Usuarios</button><br><br>
+
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>DDNI</th>
+                    <th>Edad</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Sexo</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+
+        <br><br><br>
+
+        <!-- busquedad porr filtrado: dni, apellido y correo-->
+        <br>
+        <h1 class="display-4">Busqueda de Usuarios</h1>
+
+        <!-- buscar por dni -->
+        <div class="mb-3">
+            <label for="dni_buscar" class="form-label">Ingrese el DNI del Usuario:</label>
+            <input type="number" id="dni_buscar" class="form-control">
+            <br>
+            <button onclick="buscardniUsers()" class="btn btn-primary">Buscar por DNI</button>
+        </div>
+
+        <!-- buscar por Apellido -->
+        <div class="mb-3">
+            <label for="apellido_buscar" class="form-label">Ingrese el Apellido:</label>
+            <input type="text" id="apellido_buscar" class="form-control">
+            <br>
+            <button onclick="buscarApellidoUsers()" class="btn btn-primary">Buscar por Apellido</button>
+        </div>
+
+        <!-- buscar por Correo -->
+        <div class="mb-3">
+            <label for="correo_buscar" class="form-label">Ingrese el Correo:</label>
+            <input type="text" id="correo_buscar" class="form-control">
+            <br>
+            <button onclick="buscarCorreoUsers()" class="btn btn-primary">Buscar por Correo</button>
+        </div>
+
+        <table id="tabla_busqueda" class="table table-bordered mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>DNI</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody id="tbody_busqueda"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script><br><br>
+</body>
+
+</html>
