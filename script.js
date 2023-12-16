@@ -94,6 +94,7 @@ function realizarBusqueda(url_busqueda) {
 
 
 
+
 function listarEmpleados() {
     //limpiar contenido actual de la tabla
     document.getElementById("tbody").innerHTML = "";
@@ -114,7 +115,6 @@ function listarEmpleados() {
             console.log("Error al realizar la petición");
         });
 }
-
 
 function guardarEmpleados() {
     const nuewEmpleado = JSON.stringify({
@@ -147,9 +147,33 @@ function buscarCorreoEmpleado() {
     realizarBusqueda(empleados_busqueda);
 }
 
+function buscarCargoEmpleado() {
+    const cargo = document.getElementById("cargo_buscar").value;
+    const empleados_busqueda = `${api_empleados}filtrar?cargo=${cargo}`;
+    realizarBusqueda(empleados_busqueda);
+}
 
 
+function realizarBusqueda(empleados_busqueda) {
+    //limpiado de contenido
+    document.getElementById("tbody_busqueda").innerHTML = "";
 
+    axios.get(empleados_busqueda)
+        .then(function (response) {
+            for (var index = 0; index < response.data.length; index++) {
+                var fila = "<tr>" +
+                    "<td>" + response.data[index].nombre + "</td>" +
+                    "<td>" + response.data[index].correo + "</td>" +
+                    "<td>" + response.data[index].cargo + "</td>" +
+                    "</tr>";
+                //insercion al html
+                document.getElementById("tbody_busqueda").insertRow(-1).innerHTML = fila;
+            }
+        })
+        .catch(function (error) {
+            console.log(`Error al realizar la búsqueda`);
+        });
+}
 
 
 
