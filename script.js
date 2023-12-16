@@ -1,6 +1,7 @@
 const url_api = "http://localhost:3000/api/pagos-facturas/";
 const api_empleados = "http://localhost:3000/api/empleados/";
-const api_informacion_consultoria = "http://localhost:3000/api/informacion-consultoria/"
+const api_informacion_consultoria = "http://localhost:3000/api/informacion-consultoria/";
+const api_users = "http://localhost:3000/api/users/"
 
 function listar() {
     //limpiar contenido actual de la tabla
@@ -269,3 +270,98 @@ function realizarBusquedaInfo(info_busqueda) {
             console.log(`Error al realizar la búsqueda`);
         });
 }
+
+
+
+
+
+function listarUsers() {
+    
+    document.getElementById("tbody").innerHTML = "";
+
+    axios.get(api_users)
+        .then(function (response) {
+            for (var index = 0; index < response.data.length; index++) {
+                var fila = "<tr>" + //new fila
+                    "<td>" + response.data[index].dni + "</td>" +
+                    "<td>" + response.data[index].edad + "</td>" +
+                    "<td>" + response.data[index].nombre + "</td>" +
+                    "<td>" + response.data[index].apellido + "</td>" +
+                    "<td>" + response.data[index].Sexo + "</td>" +
+                    "<td>" + response.data[index].correo + "</td>" +
+                    "</tr>"; //final fila
+                //insercion al codigo html
+                document.getElementById("tbody").insertRow(-1).innerHTML = fila;
+            }
+        })
+        .catch(function (error) {
+            console.log("Error al realizar la petición");
+        });
+}
+
+function guardarUsers() {
+    const newUsers = JSON.stringify({
+        dni: cliente.value,
+        edad: tipo_servicio.value,
+        nombre: fecha.value,
+        apellido: monto.value,
+        Sexo: estado.value,
+        correo: estado.value
+    })
+    //petición HTTP para guardar los datos
+    axios.post(url_api, newUsers, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (response) {
+            alert(response.data);
+            listarUsers();
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+}
+//new met
+function buscardniUsers() {
+    const dni = document.getElementById("dni_buscar").value;
+    const dni_busqueda = `${api_users}filtrar?dni=${dni}`;
+    realizarBusquedaUsers(dni_busqueda);
+}
+
+function buscarApellidoUsers() {
+    const apellido = document.getElementById("apellido_buscar").value;
+    const apellido_busqueda = `${api_users}filtrar?apellido=${apellido}`;
+    realizarBusquedaUsers(apellido_busqueda);
+}
+
+function buscarCorreoUsers() {
+    const correo = document.getElementById("correo_buscar").value;
+    const correo_busqueda = `${api_users}filtrar?correo=${correo}`;
+    realizarBusquedaUsers(correo_busqueda);
+}
+//new(--)
+function realizarBusquedaUsers(users_busqueda) {
+    //limpiado de contenido
+    document.getElementById("tbody_busqueda").innerHTML = "";
+
+    axios.get(users_busqueda)
+        .then(function (response) {
+            for (var index = 0; index < response.data.length; index++) {
+                var fila = "<tr>" +
+                    "<td>" + response.data[index].dni + "</td>" +
+                    "<td>" + response.data[index].edad + "</td>" +
+                    "<td>" + response.data[index].nombre + "</td>" +
+                    "<td>" + response.data[index].apellido + "</td>" +
+                    "<td>" + response.data[index].Sexo + "</td>" +
+                    "<td>" + response.data[index].correo + "</td>" +
+                    "</tr>";
+                //insercion al html
+                document.getElementById("tbody_busqueda").insertRow(-1).innerHTML = fila;
+            }
+        })
+        .catch(function (error) {
+            console.log(`Error al realizar la búsqueda`);
+        });
+}
+
+
+
