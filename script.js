@@ -269,3 +269,27 @@ function realizarBusquedaInfo(info_busqueda) {
             console.log(`Error al realizar la búsqueda`);
         });
 }
+function enviarMensaje() {
+    const cliente = document.getElementById("cliente").value;
+    const correo = document.getElementById("correo").value;
+    const pregunta = document.getElementById("pregunta").value;
+
+    const data = {
+        cliente: cliente,
+        correo: correo,
+        pregunta: "Consulta",
+    };
+
+    // Realizar la solicitud POST utilizando axios
+    axios.post(api_informacion_consultoria, data,{
+  
+    })
+
+        .then(function (response) {
+            alert(response.data.mensaje);
+            // Puedes hacer más cosas aquí después de enviar la consulta
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
