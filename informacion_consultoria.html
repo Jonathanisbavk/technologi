@@ -39,9 +39,9 @@
             <div class="mb-3">
                 <label for="estado" class="form-label">Estado:</label>
                 <select class="form-select" id="estado" name="estado">
-                    <option value="Info">Info</option>
-                    <option value="Pendiente">Pendiente</option>
-                    <option value="No pago">No pago</option>
+                    <option value="Información">Información</option>
+                    <option value="Absuelta">Absuelta</option>
+                    <option value="Por resolver">Por resolver</option>
                 </select>
             </div>
 
@@ -51,7 +51,8 @@
         <br><br>
 
         <h1 class="display-4">Listado de registro de información de consultoría</h1>
-        <button type="button" class="btn btn-secondary" onclick="listarInfoConsultoria()">Listar registro de información de consultoría</button><br><br>
+        <button type="button" class="btn btn-secondary" onclick="listarInfoConsultoria()">Listar registro de información
+            de consultoría</button><br><br>
 
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -93,16 +94,17 @@
             <label for="prefrecuente_buscar" class="form-label">Ingrese la pregunta frecuente:</label>
             <input type="text" id="prefrecuente_buscar" class="form-control">
             <br>
-            <button onclick="buscarPreguntaFrecuenteInfo()" class="btn btn-primary">Buscar por Pregunta Frecuente</button>
+            <button onclick="buscarPreguntaFrecuenteInfo()" class="btn btn-primary">Buscar por Pregunta
+                Frecuente</button>
         </div>
 
         <!-- buscar por estado -->
         <div class="mb-3">
             <label for="estado_buscar" class="form-label">Seleccione el estado:</label>
             <select id="estado_buscar" class="form-select">
-                <option value="Info">Info</option>
-                <option value="Pendiente">Pendiente</option>
-                <option value="No pago">No pago</option>
+                <option value="Información">Información</option>
+                <option value="Absuelta">Absuelta</option>
+                <option value="Por resolver">Por resolver</option>
             </select>
             <br>
             <button onclick="buscarEstadoInfo()" class="btn btn-primary">Buscar por Estado</button>

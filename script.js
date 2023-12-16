@@ -1,6 +1,6 @@
 const url_api = "http://localhost:3000/api/pagos-facturas/";
 const api_empleados = "http://localhost:3000/api/empleados/";
-const api_informacion_consultoria = "http://localhost:3000/api/informacion_consultoria/"
+const api_informacion_consultoria = "http://localhost:3000/api/informacion-consultoria/"
 
 function listar() {
     //limpiar contenido actual de la tabla
@@ -133,11 +133,11 @@ function guardarEmpleados() {
         })
         .catch(function (error) {
             console.log(error)
-        })    
+        })
 }
 
 function buscarEmpleado() {
-    const nombre = document.getElementById("nombre_buscar").value;
+    const nombre = document.getElementById("empleado_buscar").value;
     const empleados_busqueda = `${api_empleados}filtrar?nombre=${nombre}`;
     realizarBusquedaEmpleados(empleados_busqueda);
 }

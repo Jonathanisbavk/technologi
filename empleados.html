@@ -18,7 +18,7 @@
         <form action="" method="post">
             <div class="mb-3">
                 <label for="empleado" class="form-label">Empleado:</label>
-                <input type="text" class="form-control" id="empleado" name="empleado">
+                <input type="text" class="form-control" id="nombre" name="nombre">
             </div>
 
             <div class="mb-3">
@@ -29,12 +29,12 @@
             <div class="mb-3">
                 <label for="cargo" class="form-label">Cargo:</label>
                 <select class="form-select" id="cargo" name="cargo">
-                    <option value="developer">Full Stack Developer</option>
-                    <option value="admin">Administrador</option>
-                    <option value="senior">Senior Dev</option>
+                    <option value="Full Stack Developer">Full Stack Developer</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Senior Dev">Senior Dev</option>
                 </select>
             </div>
-
+            
             <button type="button" class="btn btn-primary" onclick="guardarEmpleados()">Guardar</button>
         </form>
 
@@ -66,7 +66,7 @@
             <label for="empleado_buscar" class="form-label">Ingrese el nombre del Empleado:</label>
             <input type="text" id="empleado_buscar" class="form-control">
             <br>
-            <button onclick="buscarEmpleado()" class="btn btn-primary">Buscar por Nombre</button>
+            <button type="button" onclick="buscarEmpleado()" class="btn btn-primary">Buscar por Nombre</button>
         </div>
 
         <!-- buscar por correo -->
