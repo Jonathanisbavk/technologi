@@ -1,4 +1,5 @@
 const url_api = "http://localhost:3000/api/pagos-facturas/";
+const api_empleados = "http://localhost:3000/api/empleados/";
 
 function listar() {
     //limpiar contenido actual de la tabla
@@ -90,3 +91,66 @@ function realizarBusqueda(url_busqueda) {
             console.log(`Error al realizar la búsqueda`);
         });
 }
+
+
+
+function listarEmpleados() {
+    //limpiar contenido actual de la tabla
+    document.getElementById("tbody").innerHTML = "";
+
+    axios.get(api_empleados)
+        .then(function (response) {
+            for (var index = 0; index < response.data.length; index++) {
+                var fila = "<tr>" + //new fila
+                    "<td>" + response.data[index].nombre + "</td>" +
+                    "<td>" + response.data[index].correo + "</td>" +
+                    "<td>" + response.data[index].cargo + "</td>" +
+                    "</tr>"; //final fila
+                //insercion al codigo html
+                document.getElementById("tbody").insertRow(-1).innerHTML = fila;
+            }
+        })
+        .catch(function (error) {
+            console.log("Error al realizar la petición");
+        });
+}
+
+
+function guardarEmpleados() {
+    const nuewEmpleado = JSON.stringify({
+        nombre: nombre.value,
+        correo: correo.value,
+        cargo: cargo.value
+    })
+    //petición HTTP para guardar los datos
+    axios.post(api_empleados, nuewEmpleado, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(function (response) {
+            alert(response.data);
+            listarEmpleados();
+        })
+        .catch(function (error) {
+            console.log(error)
+        })    
+}
+
+function buscarEmpleado() {
+    const nombre = document.getElementById("nombre_buscar").value;
+    const empleados_busqueda = `${api_empleados}filtrar?nombre=${nombre}`;
+    realizarBusqueda(empleados_busqueda);
+}
+
+function buscarCorreoEmpleado() {
+    const correo = document.getElementById("correo_buscar").value;
+    const empleados_busqueda = `${api_empleados}filtrar?correo=${correo}`;
+    realizarBusqueda(empleados_busqueda);
+}
+
+
+
+
+
+
+
+
